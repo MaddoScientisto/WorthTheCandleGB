@@ -49,10 +49,11 @@ jobs:
             cd ..
             echo "$PWD"
     
+    - name: Build the game
     - run: |
             echo "$PWD"
             mkdir out
-            sudo gb-studio-cli make:rom WorthTheCandle.gbsproj out/game.gb
+            gb-studio-cli make:rom WorthTheCandle.gbsproj out/game.gb
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
