@@ -21,11 +21,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        
     - name: Clone Github Repo Action
       # You may pin to the exact commit or the version.
       # uses: GuillaumeFalourd/clone-github-repo-action@8e2d67e601742dcfd167324473bb9ae3f05d203e
@@ -35,6 +37,7 @@ jobs:
         owner: chrismaltby 
         # Repository name
         repository: gb-studio
+        
     - name: Access cloned repository content
       run: |
         cd gb-studio
@@ -50,10 +53,11 @@ jobs:
             echo "$PWD"
     
     - name: Build the game
-    - run: |
+      run: |
             echo "$PWD"
             mkdir out
             gb-studio-cli make:rom WorthTheCandle.gbsproj out/game.gb
+            
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
