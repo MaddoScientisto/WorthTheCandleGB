@@ -57,7 +57,7 @@ jobs:
       run: |
             echo "$PWD"
             mkdir out
-            gb-studio-cli make:rom WorthTheCandle.gbsproj out/WorthTheCandle.gb.gb
+            gb-studio-cli make:rom WorthTheCandle.gbsproj out/WorthTheCandle.gb
             gb-studio-cli make:web WorthTheCandle.gbsproj out/web/
             
     - name: Upload rom
