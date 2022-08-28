@@ -42,12 +42,17 @@ jobs:
     - name: Build GB Studio CLI
       run: |
             cd gb-studio
+            echo "$PWD"
             yarn
             npm run make:cli
             yarn link
             cd ..
+            echo "$PWD"
     
-    - run: sudo gb-studio-cli make:rom WorthTheCandle.gbsproj out/game.gb
+    - run: |
+            echo "$PWD"
+            mkdir out
+            sudo gb-studio-cli make:rom WorthTheCandle.gbsproj out/game.gb
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
