@@ -47,7 +47,7 @@ jobs:
             yarn link
             cd ..
     
-    - run: gb-studio-cli "make:rom Worth the candle.gbsproj" out/game.gb
+    - run: gb-studio-cli make:rom "Worth the candle.gbsproj" out/game.gb
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.1.0
       with:
