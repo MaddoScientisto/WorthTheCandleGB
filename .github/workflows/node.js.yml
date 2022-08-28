@@ -21,6 +21,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
     - name: Clone Github Repo Action
       # You may pin to the exact commit or the version.
       # uses: GuillaumeFalourd/clone-github-repo-action@8e2d67e601742dcfd167324473bb9ae3f05d203e
@@ -33,11 +38,7 @@ jobs:
     - name: Access cloned repository content
       run: |
         cd gb-studio
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
+    
     - name: Build GB Studio CLI
       run: |
             cd gb-studio
