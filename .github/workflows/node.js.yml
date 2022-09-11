@@ -87,6 +87,6 @@ jobs:
       with:
         butlerApiKey: ${{secrets.BUTLER_API_KEY}}
         gameData: out/web/
-        itchUsername: $ItchUsername
-        itchGameId: $ItchGameId
+        itchUsername: ${{env.ItchUsername}}
+        itchGameId: ${{env.ItchGameId}}
         buildChannel: webgl
