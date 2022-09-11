@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ProjectName: WorthTheCandle
-      ItchUsername: MaddoScientisto
+      ItchUsername: maddoscientisto
       ItchGameId: 1699457
-      ItchBuildChannel: webgl
+      ItchBuildChannel: worth-the-candle-gb
 
     strategy:
       matrix:
