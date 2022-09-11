@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     env:
       ProjectName: WorthTheCandle
+      ItchUsername: MaddoScientisto
+      ItchGameId: 1699457
+      ItchBuildChannel: webgl
+
     # strategy:
     #   matrix:
     #     node-version: [16.x]
@@ -25,6 +29,7 @@ jobs:
       with:
         lfs: true
         submodules: recursive
+        token: ${{ secrets.PAT_TOKEN }}
     
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
@@ -77,3 +82,11 @@ jobs:
         # The desired behavior if no files are found using the provided path.
         if-no-files-found: error
 
+    - name: Upload to itch
+      uses: KikimoraGames/itch-publish@v0.0.3
+      with:
+        butlerApiKey: ${{secrets.BUTLER_API_KEY}}
+        gameData: out/web/
+        itchUsername: $ItchUsername
+        itchGameId: $ItchGameId
+        buildChannel: webgl
