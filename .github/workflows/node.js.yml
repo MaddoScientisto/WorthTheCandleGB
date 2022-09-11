@@ -13,11 +13,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    env:
+      ProjectName: WorthTheCandle
+    # strategy:
+    #   matrix:
+    #     node-version: [16.x]
+    #     # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -35,16 +36,6 @@ jobs:
         repository: chrismaltby/gb-studio
         ref: 'v3.1.0'
         path: "gb-studio"
-
-    # - name: Clone Github Repo Action
-    #   # You may pin to the exact commit or the version.
-    #   # uses: GuillaumeFalourd/clone-github-repo-action@8e2d67e601742dcfd167324473bb9ae3f05d203e
-    #   uses: GuillaumeFalourd/clone-github-repo-action@v2
-    #   with:
-    #     # Repository Owner
-    #     owner: chrismaltby 
-    #     # Repository name
-    #     repository: gb-studio
     
     - name: Access cloned repository content
       run: |
@@ -62,8 +53,8 @@ jobs:
     - name: Build the game
       run: |        
             mkdir out
-            gb-studio-cli make:rom WorthTheCandle.gbsproj out/WorthTheCandle.gb
-            gb-studio-cli make:web WorthTheCandle.gbsproj out/web/
+            gb-studio-cli make:rom $ProjectName.gbsproj out/$ProjectName.gb
+            gb-studio-cli make:web $ProjectName.gbsproj out/web/
             
     - name: Upload rom
       uses: actions/upload-artifact@v3.1.0
@@ -71,7 +62,7 @@ jobs:
         # Artifact name
         name: Rom # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: out/WorthTheCandle.gb
+        path: out/$ProjectName.gb
         # The desired behavior if no files are found using the provided path.
         if-no-files-found: error
         
