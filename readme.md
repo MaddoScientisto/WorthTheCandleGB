@@ -7,3 +7,5 @@ The latest playable version can be found on [Itch.io](https://maddoscientisto.it
 This game is made with [GB Studio 3.1.0](https://www.gbstudio.dev/).
 
 This repository can't be compiled as is because the assets need to be on a private submodule, due to most of them being non-free.
+
+This repository lacks a license on purpose, since I don't own Worth The Candle I can't allow commercial use of any kind.
