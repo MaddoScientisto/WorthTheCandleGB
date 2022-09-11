@@ -1,4 +1,4 @@
-[![Node.js CI](https://github.com/MaddoScientisto/WorthTheCandleGB/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/MaddoScientisto/WorthTheCandleGB/actions/workflows/node.js.yml)
+[![GB Studio](https://github.com/MaddoScientisto/WorthTheCandleGB/actions/workflows/gbstudio.yml/badge.svg?branch=master)](https://github.com/MaddoScientisto/WorthTheCandleGB/actions/workflows/gbstudio.yml)
 
 This is a fangame based on the popular web novel [Worth The Candle](https://www.royalroad.com/fiction/25137/worth-the-candle) by Alexander Wales.
 
