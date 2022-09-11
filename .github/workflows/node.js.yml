@@ -33,7 +33,7 @@ jobs:
     - uses: actions/checkout@v3
       with:
         repository: chrismaltby/gb-studio
-        ref: '3.1.0'
+        ref: 'v3.1.0'
         path: "gb-studio"
 
     # - name: Clone Github Repo Action
