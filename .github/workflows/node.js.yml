@@ -49,7 +49,7 @@ jobs:
         
     - name: Access cloned repository content
       run: |
-        cd gb-studio
+            cd gb-studio
     
     - name: Build GB Studio CLI
       run: |
