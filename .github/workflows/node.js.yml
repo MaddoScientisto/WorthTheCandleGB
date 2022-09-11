@@ -16,8 +16,8 @@ jobs:
     env:
       ProjectName: WorthTheCandle
       ItchUsername: maddoscientisto
-      ItchGameId: 1699457
-      ItchBuildChannel: worth-the-candle-gb
+      ItchGameId: worth-the-candle-gb
+      ItchBuildChannel: webgl
 
     strategy:
       matrix:
