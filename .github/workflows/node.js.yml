@@ -19,10 +19,10 @@ jobs:
       ItchGameId: 1699457
       ItchBuildChannel: webgl
 
-    # strategy:
-    #   matrix:
-    #     node-version: [16.x]
-    #     # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+    strategy:
+      matrix:
+        node-version: [16.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v3
@@ -59,8 +59,8 @@ jobs:
     - name: Build the game
       run: |        
             mkdir out
-            gb-studio-cli make:rom $ProjectName.gbsproj out/$ProjectName.gb
-            gb-studio-cli make:web $ProjectName.gbsproj out/web/
+            gb-studio-cli make:rom ${{env.ProjectName}}.gbsproj out/${{env.ProjectName}}.gb
+            gb-studio-cli make:web ${{env.ProjectName}}.gbsproj out/web/
             
     - name: Upload rom
       uses: actions/upload-artifact@v3.1.0
@@ -68,7 +68,7 @@ jobs:
         # Artifact name
         name: Rom # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: out/$ProjectName.gb
+        path: out/${{env.ProjectName}}.gb
         # The desired behavior if no files are found using the provided path.
         if-no-files-found: error
         
