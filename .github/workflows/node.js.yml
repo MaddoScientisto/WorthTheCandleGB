@@ -45,8 +45,7 @@ jobs:
     #     owner: chrismaltby 
     #     # Repository name
     #     repository: gb-studio
-
-        
+    
     - name: Access cloned repository content
       run: |
             cd gb-studio
@@ -54,13 +53,11 @@ jobs:
     - name: Build GB Studio CLI
       run: |
             cd gb-studio
-           # echo "$PWD"
             yarn
             npm run make:cli
             yarn link
             chmod 777 /usr/local/bin/gb-studio-cli
             cd ..
-           # echo "$PWD"
     
     - name: Build the game
       run: |        
